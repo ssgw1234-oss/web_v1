@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="사내 제조현장 업무 매뉴얼 포털">
+  <title>WORKS | 제조현장 매뉴얼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="WORKS 홈">
+      <span class="brand-mark">W</span>
+      <span>WORKS</span>
+    </a>
+    <nav class="topnav" aria-label="주요 메뉴">
+      <a class="active" href="#home">매뉴얼</a>
+      <a href="#notice">공지사항</a>
+      <a href="#support">업무지원</a>
+    </nav>
+    <div class="user-area">
+      <button class="icon-button" type="button" aria-label="알림">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+        <span class="notification-dot"></span>
+      </button>
+      <span class="avatar">김</span>
+      <span class="user-name">김현우 님</span>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">MANUFACTURING KNOWLEDGE HUB</p>
+        <h1>현장의 기준을<br>빠르게 확인하세요</h1>
+        <p class="hero-copy">작업 절차부터 안전 수칙까지, 필요한 매뉴얼을 한 곳에서 찾아보세요.</p>
+        <form class="search-box" id="searchForm" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="searchInput" type="search" placeholder="매뉴얼명, 설비명, 키워드로 검색" autocomplete="off" aria-label="매뉴얼 검색">
+          <button type="submit">검색</button>
+        </form>
+        <div class="quick-tags" aria-label="추천 검색어">
+          <span>추천</span>
+          <button type="button" data-search="비상">#비상조치</button>
+          <button type="button" data-search="점검">#일일점검</button>
+          <button type="button" data-search="불량">#불량대응</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-ring ring-one"></div>
+        <div class="visual-ring ring-two"></div>
+        <div class="visual-card card-main">
+          <span class="visual-icon">✓</span>
+          <strong>표준 작업 절차</strong>
+          <small>안전하고 정확하게</small>
+        </div>
+        <div class="visual-card card-small"><span>24</span><small>신규 문서</small></div>
+        <div class="visual-lines"><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <section class="section" aria-labelledby="categoryTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">CATEGORY</p>
+            <h2 id="categoryTitle">카테고리별 매뉴얼</h2>
+          </div>
+          <button class="text-button" id="showAllButton" type="button">전체 매뉴얼 보기 <span>→</span></button>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section class="section manuals-section" aria-labelledby="manualTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">RECENT</p>
+            <h2 id="manualTitle">최근 업데이트 매뉴얼</h2>
+          </div>
+          <p class="result-count" id="resultCount"></p>
+        </div>
+        <div class="manual-grid" id="manualGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span>?</span>
+          <h3>검색 결과가 없습니다</h3>
+          <p>다른 키워드나 카테고리로 다시 검색해 보세요.</p>
+          <button type="button" id="resetButton">전체 매뉴얼 보기</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>WORKS</strong>
+    <span>제조혁신팀 운영 · 문의 02-0000-0000</span>
+    <span>© 2026 Company. Internal Use Only.</span>
+  </footer>
+
+  <aside class="detail-panel" id="detailPanel" aria-hidden="true" aria-labelledby="detailTitle">
+    <div class="panel-toolbar">
+      <button class="panel-back" id="panelBack" type="button" aria-label="이전 단계로 이동" hidden>←</button>
+      <p class="panel-path" id="panelPath">매뉴얼</p>
+      <button class="panel-close" id="panelClose" type="button" aria-label="상세 패널 닫기">×</button>
+    </div>
+    <div class="detail-content" id="detailContent"></div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
